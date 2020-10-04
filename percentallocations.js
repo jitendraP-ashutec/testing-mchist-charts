@@ -95,7 +95,7 @@ Highcharts.chart('dashboard-percallocations-preretire', {
         text: 'Final Fund Allocation'
     },
     subtitle: {
-        text: 'Adjusted from '+age_to_start_adjust_port_allocations+ ' yrs old to '+age_to_end_adjust_port_allocations+'yrs old.'
+        text: 'Adjusted from '+age_to_start_adjust_port_allocations+ ' yrs old to '+age_to_end_adjust_port_allocations+' yrs old.'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
