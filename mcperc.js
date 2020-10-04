@@ -1,102 +1,43 @@
- 
+
 Highcharts.chart('container-mcperc', {
     chart: {
-        backgroundColor: "#fff"
-    },
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    credits: {
-        enabled: false
-    },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
-    boost: {
-        enabled: true,
-        useGPUTranslations: true,
-        usePreallocated: true
-    },
-    plotOptions: {
-        series: {
-            animation: false,
-            shadow: false
-        }
-    },
-    title: {
-        text: null
-    },
-    xAxis: {
-        type: 'datetime'
-    },
-    yAxis: {
-        title: {
-            text: "Account Value ($)"
-        },
-        min: 0,
-        max: 1000000
+        plotBackgroundColor: null,
+        plotBorderWidth: 0,
+        plotShadow: false
     },
     tooltip: {
-        xDateFormat: '%Y',
-        crosshairs: true,
-        shared: true,
-        valuePrefix: '$',
-        animation: false,
-        shadow: false,
-        valueDecimals: 0,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>"
+        enabled: false
     },
-    chart: {
-        zoomType: 'xy',
-        panning: true,
-        panKey: 'shift',
+    title: {
+        text: '<h2>100%</h2>',
+        align: 'center',
+        verticalAlign: 'middle',
+        y: 10,
+        useHTML: true
     },
-    series: [
-        {
-            name: 'Average',
-            visible: true,
-            type: 'line',
-            zIndex: 5,
-            boostThreshold: 0,
-            data: null,
-            marker: {
-                enabled: false
-            }
+    plotOptions: {
+        pie: {
+            colors: ["#00ff00", "#ffffff"],
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '57%'],
+            size: '110%'
         },
-        {
-            name: '25th-75th Percentile',
-            visible: true,
-            data: null,
-            type: 'arearange',
-            lineWidth: 0,
-            linkedTo: ':previous',
-            boostThreshold: 0,
-            color: '#A8FAFF',
-            fillOpacity: 0.5,
-            zIndex: 1,
-            marker: {
-                enabled: false
-            },
-            showInLegend: true
+        series: {
+            animation: false
+        }
+    },
+    series: [{
+        type: 'pie',
+        innerSize: '50%',
+        data: [
+            ['', 100],
+            ['', 0]
+
+        ],
+        dataLabels: {
+            enabled: false
         },
-        {
-            name: '10th-90th Percentile',
-            visible: false,
-            data: null,
-            type: 'arearange',
-            lineWidth: 0,
-            linkedTo: ':previous',
-            boostThreshold: 0,
-            color: '#A8FAFF',
-            fillOpacity: 0.3,
-            zIndex: 0,
-            marker: {
-                enabled: false
-            },
-            showInLegend: true
-        }]
+        animation: false
+    }]
 });
