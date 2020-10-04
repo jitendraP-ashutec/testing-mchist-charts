@@ -2,6 +2,8 @@
 <head>
 <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/highcharts.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/highcharts-more.js" integrity="sha256-x5API4J/vECCB8CNZv5h5onmdQNrA7I2qvc35XE3QO0=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/modules/boost.js" integrity="sha256-CymzXFABoVZscOBGsQGzaIRHn/of09Xj2VuxPPeLPg8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/modules/exporting.js" integrity="sha256-yr/VcTNtv0Q6nAc7jMKmx/mmwu/51GNIvTGqrLNm9so=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios@0.20.0/dist/axios.min.js" integrity="sha256-KyY5SqyBmXeM0zfYBGU1tuqcstxpjkECApypY+CA4Z8=" crossorigin="anonymous"></script>
 </head>
 
@@ -41,7 +43,26 @@
     <div id="yearlyspendingchart"></div>
   </figure>
 
+  <figure class="highcharts-figure">
+    <p>Chart 500: % Allocation Chart</p>
+    <div id="dashboard-percallocations-preretire"></div>
+    <div id="dashboard-percallocations-retire"></div>
+  </figure>
+
+
+
+
 <script>
+var preretire_stockallocation = 70;
+var preretire_tbondallocation = 10;
+var preretire_corpbondallocation = 20;
+var preretire_cashallocation = 0;
+
+var retire_stockallocation = 50;
+var retire_tbondallocation = 20;
+var retire_corpbondallocation = 20;
+var retire_cashallocation = 10;
+
 const postoptions = {
   "client_birthmonth": 7,
         "client_birthday": 20,
@@ -54,15 +75,15 @@ const postoptions = {
         "S0": 800000,
         "portfolioallocation_useCustomPerc": false,
         "portfolioallocation_selection": 0,
-        "portfolioallocation_stock": 80,
-        "portfolioallocation_treasury": 10,
-        "portfolioallocation_corpbond": 10,
-        "portfolioallocation_cash": 0,
+        "portfolioallocation_stock": preretire_stockallocation,
+        "portfolioallocation_treasury": preretire_tbondallocation,
+        "portfolioallocation_corpbond": preretire_corpbondallocation,
+        "portfolioallocation_cash": preretire_cashallocation,
         "portfolioallocation_selection_end": 2,
-        "portfolioallocation_stock_end": 70,
-        "portfolioallocation_treasury_end": 10,
-        "portfolioallocation_corpbond_end": 20,
-        "portfolioallocation_cash_end": 0,
+        "portfolioallocation_stock_end": retire_stockallocation,
+        "portfolioallocation_treasury_end": retire_tbondallocation,
+        "portfolioallocation_corpbond_end": retire_corpbondallocation,
+        "portfolioallocation_cash_end": retire_cashallocation,
         "useCanadianFunds": false,
         "portfolioallocation_stockCA": 70,
         "portfolioallocation_treasuryCA": 10,
@@ -320,6 +341,7 @@ postoptions).then((response) => {
 <script src="mcarea.js"></script>
 <script src="mcperc.js"></script>
 <script src="mcpalivearea.js"></script>
+<script src="percentallocations.js"></script>
 </footer>
 
 </html>
