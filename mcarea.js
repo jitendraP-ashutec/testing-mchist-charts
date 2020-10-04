@@ -18,12 +18,6 @@ Highcharts.chart('container-mcarea', {
         useGPUTranslations: true,
         usePreallocated: true
     },
-    plotOptions: {
-        series: {
-            animation: false,
-            shadow: false
-        }
-    },
     title: {
         text: null
     },

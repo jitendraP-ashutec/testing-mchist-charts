@@ -1,9 +1,6 @@
 
 
 Highcharts.chart('container-histarea', {
-    chart: {
-        backgroundColor: "#fff"
-    },
     colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false
