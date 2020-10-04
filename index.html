@@ -63,6 +63,9 @@ var retire_tbondallocation = 20;
 var retire_corpbondallocation = 20;
 var retire_cashallocation = 10;
 
+var age_to_start_adjust_port_allocations = 70;
+var age_to_end_adjust_port_allocations = 70;
+
 const postoptions = {
   "client_birthmonth": 7,
         "client_birthday": 20,
@@ -93,8 +96,8 @@ const postoptions = {
         "portfolioallocation_treasury_endCA": 10,
         "portfolioallocation_corpbond_endCA": 15,
         "portfolioallocation_cash_endCA": 5,
-        "age_to_start_adjust_port_allocations": 60,
-        "age_to_end_adjust_port_allocations": 70,
+        "age_to_start_adjust_port_allocations": age_to_start_adjust_port_allocations,
+        "age_to_end_adjust_port_allocations": age_to_end_adjust_port_allocations,
         "desired_legacy_amount": 100000,
 
         "annualwithdrawalneeds": 24000,
