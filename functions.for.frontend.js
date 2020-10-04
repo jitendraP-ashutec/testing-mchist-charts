@@ -1,7 +1,7 @@
 // These functions are on the frontend too to facilitate text/chart displays
 
 // Getting age (in years)
-export function numAgeFNC(birthday, birthmonth, birthyear) {
+function numAgeFNC(birthday, birthmonth, birthyear) {
 
     let ageresult = (new Date().getTime() - new Date(birthyear,
         birthmonth, birthday, 0, 0, 0, 0).getTime()) / 31536000000;
@@ -13,7 +13,7 @@ export function numAgeFNC(birthday, birthmonth, birthyear) {
 }
 
 // Getting the # of Years to run the simulation
-export function numYearsFNC(client_age, coclient_age, maxagetoplan, coclient_selected) {
+function numYearsFNC(client_age, coclient_age, maxagetoplan, coclient_selected) {
     let nyears = 30;
 
     if ((client_age > coclient_age && coclient_age > 0) || coclient_selected) {
@@ -31,7 +31,7 @@ export function numYearsFNC(client_age, coclient_age, maxagetoplan, coclient_sel
 
 // Getting % allocations for portfolio types
 // (in_portfoliotype: 0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
-export function getPercentFundsFNC(in_portfoliotype, in_usecustomperc, in_usecanadian,
+function getPercentFundsFNC(in_portfoliotype, in_usecustomperc, in_usecanadian,
     in_stockperc, in_tbondperc, in_corpbondperc, in_cashperc) {
 
     // return array with Stock %, T Bond %, Corp Bond %, Cash % as the order (canadian only uses Stock %, T Bond %, Cash %)
@@ -88,7 +88,7 @@ export function getPercentFundsFNC(in_portfoliotype, in_usecustomperc, in_usecan
 }
 
 // Gets a map of % given a start % & end % over a duration
-export function getMapFNC(lenarray, numyears_adjust_start, numyears_adjust_end, start_perc, end_perc) {
+function getMapFNC(lenarray, numyears_adjust_start, numyears_adjust_end, start_perc, end_perc) {
     // If the years in is 0 or less then the array is just the end percentage
     if (numyears_adjust_end <= 0) { return new Array(lenarray).fill(end_perc); }
 
@@ -139,13 +139,13 @@ export function getMapFNC(lenarray, numyears_adjust_start, numyears_adjust_end, 
     return mapresult;
 }
 
-export const toMatrix = (arr, width) => arr.reduce((rows, key, index) =>
+const toMatrix = (arr, width) => arr.reduce((rows, key, index) =>
     (index % width === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows, []);
 
-export const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
+const arrAvg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
 
 // Custom Color for % Alive Indication
-export function perc2color(perc, min, max, opacity) {
+function perc2color(perc, min, max, opacity) {
     if (perc <= min) { return "#FF0000" + opacity }
     if (perc > max) { perc = 100; }
 
@@ -173,20 +173,16 @@ export function perc2color(perc, min, max, opacity) {
     return '#' + ('000000' + h.toString(16)).slice(-6) + opacity;
 }
 
-export function transposefnc(a) {
+function transposefnc(a) {
     return a[0].map((_, c) => a.map(r => r[c]));
 }
 
 
-export function getMaxOfArray(numArray) {
+function getMaxOfArray(numArray) {
     return Math.max.apply(null, numArray);
 }
 
-export function ascending(a, b) {
-    return a - b;
-}
-
-export function sumArrays(...arrays) {
+function sumArrays(...arrays) {
     let arraysumout = new Array(arrays[0].length).fill(0);
 
     for (let i = 0; i < arrays[0].length; i++) {
@@ -198,7 +194,7 @@ export function sumArrays(...arrays) {
     return(arraysumout);
 }
 
-function standardDeviation(values){
+function standardDeviation(values) {
     let avg = arrAvg(values);
 
     let squareDiffs = values.map(function(value){
