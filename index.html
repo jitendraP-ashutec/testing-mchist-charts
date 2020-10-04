@@ -262,14 +262,14 @@ const postoptions = {
 
 
 // POST to monte carlo worker (charts labeled 100 - 199)
-const postdataout = axios.post('widgets.eadvisor.app/getmcdata/', postoptions).then((response) => {
+const mcpostdataout = axios.post('widgets.eadvisor.app/getmcdata/', postoptions).then((response) => {
   console.log(response);
 }, (error) => {
   console.log(error);
 });
 
 // POST to historical worker (charts labeled 200 - 299)
-const postdataout = axios.post('widgets.eadvisor.app/gethistdata/', postoptions).then((response) => {
+const histpostdataout = axios.post('widgets.eadvisor.app/gethistdata/', postoptions).then((response) => {
   console.log(response);
 }, (error) => {
   console.log(error);
