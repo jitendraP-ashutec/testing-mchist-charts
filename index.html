@@ -21,6 +21,11 @@
     <div id="container-mcarea"></div>
   </figure>
 
+  <figure class="highcharts-figure">
+    <p>Chart 101: Monte Carlo Percent</p>
+    <div id="container-mcperc"></div>
+  </figure>
+
 <script>
 const postoptions = {
   "client_birthmonth": 7,
@@ -256,12 +261,19 @@ const postoptions = {
 };
 
 
-const postdataout = axios.post('https://mcworker.eadvisorapp.workers.dev/', postoptions).then((response) => {
+// POST to monte carlo worker (charts labeled 100 - 199)
+const postdataout = axios.post('widgets.eadvisor.app/getmcdata/', postoptions).then((response) => {
   console.log(response);
 }, (error) => {
   console.log(error);
 });
 
+// POST to historical worker (charts labeled 200 - 299)
+const postdataout = axios.post('widgets.eadvisor.app/gethistdata/', postoptions).then((response) => {
+  console.log(response);
+}, (error) => {
+  console.log(error);
+});
 
 
 
