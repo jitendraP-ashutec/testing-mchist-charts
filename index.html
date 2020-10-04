@@ -260,27 +260,10 @@ const postoptions = {
         "nsim": 1000
 };
 
-var xhttp = new XMLHttpRequest();
-xhttp.open("POST", "https://widgets.eadvisor.app/getmcdata/", true);
-xhttp.setRequestHeader("Content-type", "application/json",'Access-Control-Allow-Origin', '*');
-xhttp.send(postoptions);
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log( this.responseText);
-    }
-    else {
-      console.log( this.responseText);
-    }
-  };
-
 // POST to monte carlo worker (charts labeled 100 - 199)
-const mcpostdataout = axios.post('https://widgets.eadvisor.app/getmcdata/',{
-  headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
-      mode: 'no-cors',
-}, postoptions).then((response) => {
+const mcpostdataout = axios.post('https://widgets.eadvisor.app/getmcdata/',
+ postoptions
+ ).then((response) => {
   console.log(response);
 }, (error) => {
   console.log(error);
