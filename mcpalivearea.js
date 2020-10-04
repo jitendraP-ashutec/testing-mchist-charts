@@ -1,5 +1,26 @@
 Highcharts.chart('palivechart', {
     chart: {
+        backgroundColor: "#fff"
+    },
+    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
+    credits: {
+        enabled: false
+    },
+    exporting: {
+        enabled: true,
+        scale: 6,
+        buttons: {
+            contextButton: {
+                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
+            }
+        }
+    },
+    boost: {
+        enabled: true,
+        useGPUTranslations: true,
+        usePreallocated: true
+    },
+    chart: {
         zoomType: 'x',
         panning: true,
         panKey: 'shift',
