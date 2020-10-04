@@ -265,7 +265,6 @@ axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 // POST to monte carlo worker (charts labeled 100 - 199)
-console.log('mc post');
 const mcpostdataout = axios.post('/getmcdata/',
  postoptions
  ).then((response) => {
@@ -275,7 +274,6 @@ const mcpostdataout = axios.post('/getmcdata/',
 });
 
 // POST to historical worker (charts labeled 200 - 299)
-console.log('hist post');
 const histpostdataout = axios.post('/gethistdata/',{
   headers: {
         'Access-Control-Allow-Origin': '*',
