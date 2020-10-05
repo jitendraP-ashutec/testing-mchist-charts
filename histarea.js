@@ -1,6 +1,6 @@
 
 
-Highcharts.chart('container-histarea', {
+var HISTArea = Highcharts.chart('container-histarea', {
     colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false

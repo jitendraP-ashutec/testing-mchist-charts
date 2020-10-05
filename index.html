@@ -364,6 +364,7 @@ function updateMCCharts(response) {
 function updateHISTCharts(response) {
   console.log(response);
 
+  // Updating with the PAlive Area Chart
   console.log(response.palive);
   HISTPAlive.update({
     title: {
@@ -378,6 +379,25 @@ function updateHISTCharts(response) {
     }]
     
   });
+
+  HISTArea.update({
+    yAxis: {
+        max: 1000000
+    },
+    series: [
+        {
+            data: null // Average
+        },
+        {
+            data: null // 25-75%
+        },
+        {
+          data: null // 10-90%
+        }]
+    
+  });
+
+
 }
 
 
