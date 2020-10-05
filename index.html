@@ -54,7 +54,6 @@
 
 
   <script src="functions.for.frontend.js"></script>
-  <script src="glidepath.js"></script>
   <script src="histarea.js"></script>
   <script src="histperc.js"></script>
   <script src="mcarea.js"></script>
@@ -63,6 +62,9 @@
   
 
 <script>
+  var minokperc = 70;
+
+
 var preretire_stockallocation = 70;
 var preretire_tbondallocation = 10;
 var preretire_corpbondallocation = 20;
@@ -73,18 +75,29 @@ var retire_tbondallocation = 20;
 var retire_corpbondallocation = 20;
 var retire_cashallocation = 10;
 
-var age_to_start_adjust_port_allocations = 60;
-var age_to_end_adjust_port_allocations = 70;
+var age_to_start_adjust_port_allocations = 70;
+var age_to_end_adjust_port_allocations = 80;
+
+var client_birthmonth = 7;
+var client_birthday = 22;
+var client_birthyear = 1960;
+var coclient_birthmonth = 7;
+var coclient_birthday = 22;
+var coclient_birthyear = 1960;
+
+var maxagetoplan = 95;
+
+var coclient_selected = true;
 
 const postoptions = {
-  "client_birthmonth": 7,
-        "client_birthday": 20,
-        "client_birthyear": 1960,
-        "coclient_birthmonth": 5,
-        "coclient_birthday": 30,
-        "coclient_birthyear": 1960,
-        "coclient_selected": true,
-        "maxagetoplan": 90,
+  "client_birthmonth": client_birthmonth,
+        "client_birthday": client_birthday,
+        "client_birthyear": client_birthyear,
+        "coclient_birthmonth": coclient_birthmonth,
+        "coclient_birthday": coclient_birthday,
+        "coclient_birthyear": coclient_birthyear,
+        "coclient_selected": coclient_selected,
+        "maxagetoplan": maxagetoplan,
         "S0": 800000,
         "portfolioallocation_useCustomPerc": false,
         "portfolioallocation_selection": 0,
@@ -332,6 +345,7 @@ var settingsMC = {
   "url": "https://widgets.eadvisor.app/getmcdata/",
   "method": "POST",
   "timeout": 0,
+  crossDomain: true,
   "headers": {
     "Content-Type": "application/json",
     "Access-Control-Allow-Origin": "*"
@@ -348,17 +362,57 @@ function updateMCCharts(response) {
   
   // P Alive Chart (see mcperc.js for full chart definition)
   console.log(response.palive);
+  var palive_mc_val = Number(response.palive);
+  if (palive_mc_val < 90) {palive_mc_val = Math.round(palive_mc_val);}
+
+  let gaugecolorval = perc2color(palive_mc_val, minokperc, 100, "FF");
+console.log(gaugecolorval)
   MCPAlive.update({
     title: {
-        text: '<h2>'+response.palive+'%</h2>'
+        text: '<h2>'+palive_mc_val+'%</h2>'
     },
+    plotOptions: {
+            pie: {
+                colors: [gaugecolorval,"#ffffff"]
+            }
+        },
     series: [{
         data: [
-            ['', Number(response.palive)],
-            ['', 100 - Number(response.palive)]
+            ['', palive_mc_val],
+            ['', 100 - palive_mc_val]
 
         ]
     }]
+    
+  });
+
+  // MC Area Chart (see mcarea.js for definition)
+
+  //Create Highcharts compatible data
+  let xval = getXVALArray(response.q10.length);
+  q10q90 = transposefnc(toMatrix(xval.concat(response.q10).concat(response.q90), xval.length));
+  q25q75 = transposefnc(toMatrix(xval.concat(response.q25).concat(response.q75), xval.length));
+  q50 = transposefnc(toMatrix(xval.concat(response.q50), xval.length));
+
+  var MCArea_chart_max = getMaxOfArray(response.q75);
+  var MCArea_chart_min = getMinOfArray(response.q10);
+  if (MCArea_chart_min < 0) {MCArea_chart_min = 0;}
+
+  MCArea.update({
+    yAxis: {
+        min: MCArea_chart_min,
+        max: MCArea_chart_max
+    },
+    series: [
+        {
+            data: q50 // Average
+        },
+        {
+            data: q25q75 // 25-75%
+        },
+        {
+          data: q10q90 // 10-90%
+        }]
     
   });
 
@@ -370,35 +424,67 @@ function updateHISTCharts(response) {
 
   // P Alive Chart (see histperc.js for full chart definition)
   console.log(response.palive);
+  var palive_hist_val = Number(response.palive);
+  if (palive_hist_val < 90) {palive_hist_val = Math.round(palive_hist_val);}
+
+  let gaugecolorval = perc2color(palive_hist_val, minokperc, 100, "FF");
+
   HISTPAlive.update({
     title: {
-        text: '<h2>'+response.palive+'%</h2>'
+        text: '<h2>'+palive_hist_val+'%</h2>'
     },
+    plotOptions: {
+            pie: {
+                colors: [gaugecolorval,"#ffffff"]
+            }
+        },
     series: [{
         data: [
-            ['', Number(response.palive)],
-            ['', 100 - Number(response.palive]
+            ['', palive_hist_val],
+            ['', 100 - palive_hist_val]
 
         ]
     }]
     
   });
 
+  // Area Chart (see histarea.js for full chart definition)
+  //Create Highcharts compatible data
+  let xval = getXVALArray(response.averageresult.length);
+  var chart_averageresult = transposefnc(toMatrix(xval.concat(response.averageresult), xval.length));
+  var chart_worst = transposefnc(toMatrix(xval.concat(response.worstresult_1st), xval.length));
+  var chart_2ndworst = transposefnc(toMatrix(xval.concat(response.worstresult_2nd), xval.length));
+  var chart_3rdworst = transposefnc(toMatrix(xval.concat(response.worstresult_3rd), xval.length));
+  var chart_best = transposefnc(toMatrix(xval.concat(response.bestresult_1st), xval.length));
+  var chart_2ndbest = transposefnc(toMatrix(xval.concat(response.bestresult_2nd), xval.length));
+  var chart_3rdbest = transposefnc(toMatrix(xval.concat(response.bestresult_3rd), xval.length));
+  
+  var HISTArea_chart_max = getMaxOfArray(response.bestresult_1st);
+  var HISTArea_chart_min = getMinOfArray(response.worstresult_1st);
+  if (HISTArea_chart_min < 0) {HISTArea_chart_min = 0;}
+
   HISTArea.update({
     yAxis: {
-        max: 1000000
+        min: HISTArea_chart_min,
+        max: HISTArea_chart_max
     },
-    series: [
-        {
-            data: response.q10 // Average
-        },
-        {
-            data: response.q25 // 25-75%
-        },
-        {
-          data: response.q10 // 10-90%
-        }]
-    
+    series: [{
+      data: chart_worst // worst
+    }, {
+      data: chart_2ndbest // 2nd worst
+    },
+    {
+      data: chart_3rdworst // 3rd worst
+    }, {
+      data: chart_best //  best
+    }, {
+      data: chart_2ndbest // 2nd best
+    },
+    {
+      data: chart_3rdbest // 3rd best
+    }, {
+        data: chart_averageresult // Average
+    }]
   });
 
 
@@ -408,6 +494,7 @@ function updateHISTCharts(response) {
 </script>
 
 
+<script src="glidepath.js"></script>
 <script src="percentallocations.js"></script>
 
 </body>

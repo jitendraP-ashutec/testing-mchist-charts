@@ -143,6 +143,29 @@ function getMapFNC(lenarray, numyears_adjust_start, numyears_adjust_end, start_p
     return mapresult;
 }
 
+function getXVALArray(length) {
+    let xval = new Array(length);
+    let currentyear = new Date().getFullYear();
+
+    for (let i=0;i < length; i++) {
+        currentyear = currentyear + 1;
+        xval[i] = new Date(currentyear, 1, 1, 0, 0, 0, 0).valueOf();
+    }
+
+    return xval;
+}
+
+function getXVALYearsArray(length) {
+    let xval = new Array(length);
+    const currentyear = new Date().getFullYear();
+
+    for (let i=0;i < length; i++) {
+        xval[i] = currentyear + i;
+    }
+
+    return xval;
+}
+
 const toMatrix = (arr, width) => arr.reduce((rows, key, index) =>
     (index % width === 0 ? rows.push([key]) : rows[rows.length - 1].push(key)) && rows, []);
 
@@ -184,6 +207,9 @@ function transposefnc(a) {
 
 function getMaxOfArray(numArray) {
     return Math.max.apply(null, numArray);
+}
+function getMinOfArray(numArray) {
+    return Math.min.apply(null, numArray);
 }
 
 function sumArrays(...arrays) {
