@@ -347,8 +347,13 @@ function updateMCCharts(response) {
   console.log(response.palive);
   MCPAlive.update({
     series: [{
-        data: response.palive,
+        data: [
+            ['', response.palive],
+            ['', 100 - response.palive]
+
+        ]
     }]
+    
   });
 
 }
@@ -359,8 +364,13 @@ function updateHISTCharts(response) {
   console.log(response.palive);
   HISTPAlive.update({
     series: [{
-        data: response.palive,
+        data: [
+            ['', response.palive],
+            ['', 100 - response.palive]
+
+        ]
     }]
+    
   });
 }
 
