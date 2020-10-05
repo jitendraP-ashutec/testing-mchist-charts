@@ -313,7 +313,8 @@ var settingsHIST = {
   "data": JSON.stringify(postoptions),
 };
 
-var HISTResults = $.ajax(settingsHIST).done(function (response) {
+ $.ajax(settingsHIST).done(function (response) {
+  updateHISTCharts(response);
   console.log(response);
 });
 
@@ -328,12 +329,18 @@ var settingsMC = {
   "data": JSON.stringify(postoptions),
 };
 
-var MCResults = $.ajax(settingsMC).done(function (response) {
+$.ajax(settingsMC).done(function (response) {
   console.log(response);
+  updateMCCharts(response);
 });
 
-console.log(JSON.parse(MCResults));
+function updateMCCharts(response) {
+  ///
+}
 
+function updateHISTCharts(response) {
+  ///
+}
 
 
 </script>
