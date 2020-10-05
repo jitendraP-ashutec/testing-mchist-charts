@@ -301,12 +301,9 @@ const postoptions = {
 };
 
 
-$.get('https://widgets.eadvisor.app/gethistdata/',  // url
-       function(data, status, xhr) {   // success callback function
-                alert('status: ' + status + ', data: ' + data.responseData);
-            },
-       'json'); // response data format
-
+       $.get( "https://widgets.eadvisor.app/gethistdata/", function( data ) {
+  alert( "Data Loaded: " + data );
+});
 
 
 </script>
