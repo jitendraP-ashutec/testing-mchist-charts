@@ -301,10 +301,18 @@ const postoptions = {
 };
 
 
-$.post( "https://widgets.eadvisor.app/gethistdata/", postoptions)
-  .done(function( data ) {
-    console.log(data);
-  });
+$.ajax({
+    url: 'https://histworker.eadvisorapp.workers.dev/',
+    type: 'post',
+    data: postoptions,
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    dataType: 'json',
+    success: function (data) {
+        console.log(data);
+    }
+});
 
 
 </script>
