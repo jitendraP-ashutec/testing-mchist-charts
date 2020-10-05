@@ -43,6 +43,7 @@
     var coclient_selected = true;
 
   </script>
+
 </head>
 
 
@@ -161,9 +162,20 @@
 <hr>
 <hr>
 <hr>
+<h2>This is the Card: Simulation Text Description</h2>
+<p id="mcworkertext"></p>
 
+<hr>
+<h2>This is the Card: Historical Text Description</h2>
+<p id="histworkertext"></p>
 
+<hr>
+<h2>This is the Card: Financial Overview Text Description</h2>
+<p id="financialoverviewtext"></p>
 
+<hr>
+<h2>This is the Card: Investment Overview Text Description</h2>
+<p id="investmentoverviewtext"></p>
 
 
 <!--/////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -365,6 +377,9 @@
       });
 
 
+      // Text from MC Worker
+      document.getElementById("mcworkertext").innerHTML = response.description_text;
+
 
     }
 
@@ -484,7 +499,15 @@
         }]
       });
 
+      // Text from HIST Worker
+      document.getElementById("histworkertext").innerHTML = response.description_text;
 
+
+      // Financial overview data from HIST Worker
+      document.getElementById("financialoverviewtext").innerHTML = response.finoverview_text;
+
+      // Investment overview data from HIST Worker
+      document.getElementById("investmentoverviewtext").innerHTML = response.investoverview_text;
 
     }
 
