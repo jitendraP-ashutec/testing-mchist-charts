@@ -301,10 +301,10 @@ const postoptions = {
 };
 
 
-       $.get( "https://widgets.eadvisor.app/gethistdata/", function( data ) {
-  console.log( data );
-  console.log(JSON.stringify(data));
-});
+$.post( "https://histworker.eadvisorapp.workers.dev/", postoptions)
+  .done(function( data ) {
+    alert( "Data Loaded: " + data );
+  });
 
 
 </script>
