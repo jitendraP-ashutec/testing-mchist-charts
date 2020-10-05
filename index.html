@@ -346,6 +346,9 @@ function updateMCCharts(response) {
   
   console.log(response.palive);
   MCPAlive.update({
+    title: {
+        text: '<h2>'+response.palive+'%</h2>'
+    },
     series: [{
         data: [
             ['', response.palive],
@@ -363,6 +366,9 @@ function updateHISTCharts(response) {
 
   console.log(response.palive);
   HISTPAlive.update({
+    title: {
+        text: '<h2>'+response.palive+'%</h2>'
+    },
     series: [{
         data: [
             ['', response.palive],
