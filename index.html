@@ -310,6 +310,8 @@ const postoptions = {
 };
 
 
+////////////////////////////////////////////////////////////////////////
+// POST Requests (https://widgets.eadvisor.app/gethistdata/ is called the Historical & https://widgets.eadvisor.app/getmcdata/ is called simulation or Monte Carlo)
 var settingsHIST = {
   "url": "https://widgets.eadvisor.app/gethistdata/",
   "method": "POST",
@@ -344,6 +346,7 @@ $.ajax(settingsMC).done(function (response) {
 function updateMCCharts(response) {
   console.log(response);
   
+  // P Alive Chart (see mcperc.js for full chart definition)
   console.log(response.palive);
   MCPAlive.update({
     title: {
@@ -351,8 +354,8 @@ function updateMCCharts(response) {
     },
     series: [{
         data: [
-            ['', response.palive],
-            ['', 100 - response.palive]
+            ['', Number(response.palive)],
+            ['', 100 - Number(response.palive)]
 
         ]
     }]
@@ -364,7 +367,8 @@ function updateMCCharts(response) {
 function updateHISTCharts(response) {
   console.log(response);
 
-  // Updating with the PAlive Area Chart
+
+  // P Alive Chart (see histperc.js for full chart definition)
   console.log(response.palive);
   HISTPAlive.update({
     title: {
@@ -372,8 +376,8 @@ function updateHISTCharts(response) {
     },
     series: [{
         data: [
-            ['', response.palive],
-            ['', 100 - response.palive]
+            ['', Number(response.palive)],
+            ['', 100 - Number(response.palive]
 
         ]
     }]
@@ -386,13 +390,13 @@ function updateHISTCharts(response) {
     },
     series: [
         {
-            data: null // Average
+            data: response.q10 // Average
         },
         {
-            data: null // 25-75%
+            data: response.q25 // 25-75%
         },
         {
-          data: null // 10-90%
+          data: response.q10 // 10-90%
         }]
     
   });
