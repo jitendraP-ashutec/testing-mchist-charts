@@ -301,19 +301,22 @@ const postoptions = {
 };
 
 
-$.ajax({
+var request = $.ajax({
     url: 'https://histworker.eadvisorapp.workers.dev/',
-    type: 'post',
+    method: 'POST',
     data: postoptions,
     headers: {
       "Access-Control-Allow-Origin": "*"
     },
-    dataType: 'json',
-    success: function (data) {
-        console.log(data);
-    }
+    dataType: 'json'
 });
-
+request.done(function (msg) { 
+	console.log("Ajax Request Completed" + msg); 
+}); 
+ 
+request.fail(function (jqXHR, textStatus) { 
+	alert("Request failed: " + textStatus); 
+});
 
 </script>
 
