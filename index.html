@@ -4,7 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/highcharts-more.js" integrity="sha256-x5API4J/vECCB8CNZv5h5onmdQNrA7I2qvc35XE3QO0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/modules/boost.js" integrity="sha256-CymzXFABoVZscOBGsQGzaIRHn/of09Xj2VuxPPeLPg8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/modules/exporting.js" integrity="sha256-yr/VcTNtv0Q6nAc7jMKmx/mmwu/51GNIvTGqrLNm9so=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios@0.20.0/dist/axios.min.js" integrity="sha256-KyY5SqyBmXeM0zfYBGU1tuqcstxpjkECApypY+CA4Z8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -300,6 +300,7 @@ const postoptions = {
         "nsim": 1000
 };
 
+/*
 axios.defaults.baseURL = 'https://widgets.eadvisor.app';
 axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
@@ -312,6 +313,8 @@ const mcpostdataout = axios.post('/getmcdata/',
 }, (error) => {
   console.log(error);
 });
+
+
 
 // POST to historical worker (charts labeled 200 - 299)
 const histpostdataout = axios.post('/gethistdata/',{
@@ -326,6 +329,14 @@ postoptions).then((response) => {
 }, (error) => {
   console.log(error);
 });
+*/
+
+$.post('https://widgets.eadvisor.app/gethistdata/',  // url
+postoptions, // data to be submit
+       function(data, status, xhr) {   // success callback function
+                alert('status: ' + status + ', data: ' + data.responseData);
+            },
+       'json'); // response data format
 
 
 
