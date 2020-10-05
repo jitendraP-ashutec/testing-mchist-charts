@@ -323,7 +323,7 @@ var settingsHIST = {
 };
 
  $.ajax(settingsHIST).done(function (response) {
-  console.log(response);
+  updateHISTCharts(response);
 });
 
 var settingsMC = {
