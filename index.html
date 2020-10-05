@@ -314,7 +314,6 @@ var settingsHIST = {
 };
 
  $.ajax(settingsHIST).done(function (response) {
-  updateHISTCharts(response);
   console.log(response);
 });
 
@@ -330,16 +329,17 @@ var settingsMC = {
 };
 
 $.ajax(settingsMC).done(function (response) {
-  console.log(response);
   updateMCCharts(response);
 });
 
 function updateMCCharts(response) {
-  ///
+  console.log(response);
+  console.log(response.palive)
 }
 
 function updateHISTCharts(response) {
-  ///
+  console.log(response);
+
 }
 
 
