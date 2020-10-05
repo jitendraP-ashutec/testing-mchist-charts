@@ -343,19 +343,25 @@ $.ajax(settingsMC).done(function (response) {
 
 function updateMCCharts(response) {
   console.log(response);
-  //console.log(response.palive)
-
+  
+  console.log(response.palive);
   MCPAlive.update({
     series: [{
         data: response.palive,
     }]
-  })
+  });
 
 }
 
 function updateHISTCharts(response) {
   console.log(response);
 
+  console.log(response.palive);
+  HISTPAlive.update({
+    series: [{
+        data: response.palive,
+    }]
+  });
 }
 
 
