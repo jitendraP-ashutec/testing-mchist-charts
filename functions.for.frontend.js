@@ -224,6 +224,16 @@ function sumArrays(...arrays) {
     return(arraysumout);
 }
 
+function divide2Arrays(arraynum, arrayden) {
+    let arraydivout = new Array(Math.min(arraynum.length,arrayden.length)).fill(0);
+
+    for (let i = 0; i < arraynum.length; i++) {
+        arraydivout[i] = arraynum[i] / arrayden[i];
+    }
+
+    return(arraydivout);
+}
+
 function standardDeviation(values) {
     let avg = arrAvg(values);
 

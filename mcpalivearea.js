@@ -1,5 +1,8 @@
 var MCPAliveArea = Highcharts.chart('palivechart', {
     colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
+    lang: {
+        thousandsSep: ','
+      },
     credits: {
         enabled: false
     },
@@ -31,14 +34,22 @@ var MCPAliveArea = Highcharts.chart('palivechart', {
     },
     xAxis: {
         categories: null,
-        type: 'datetime'
+        type: 'datetime',
+        labels: {
+            formatter: function() {
+              return Highcharts.dateFormat('%Y', this.value);
+            }
+          }
     },
 yAxis: {
     title: {
         text: "% Successful Simulations"
     },
     min: 0,
-    max: 100
+    max: 100,
+        labels: {
+            format: '{value}%'
+        }
 },
     plotOptions: {
         series: {
@@ -48,7 +59,7 @@ yAxis: {
         }
     },
     tooltip: {
-        xDateFormat: '%b %Y',
+        xDateFormat: '%Y',
         valueDecimals: 0,
         valueSuffix: '%',
         animation: false,

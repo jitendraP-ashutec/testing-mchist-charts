@@ -5,6 +5,9 @@ var HISTArea = Highcharts.chart('container-histarea', {
     credits: {
         enabled: false
     },
+    lang: {
+        thousandsSep: ','
+      },
     exporting: {
         enabled: true,
         scale: 6,
@@ -36,6 +39,9 @@ var HISTArea = Highcharts.chart('container-histarea', {
     yAxis: {
         title: {
             text: "Account Value ($)"
+        },
+        labels: {
+            format: '${value}'
         },
         min: 0,
         max: 1000000

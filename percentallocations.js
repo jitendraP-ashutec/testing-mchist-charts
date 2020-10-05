@@ -27,8 +27,11 @@ Highcharts.chart('percallocations-preretire', {
     title: {
         text: 'Starting Fund Allocation'
     },
+    subtitle: {
+        text: 'Allocation starting to adjust at '+age_to_start_adjust_port_allocations+' yrs old'
+    },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
     accessibility: {
         point: {
@@ -95,10 +98,10 @@ Highcharts.chart('percallocations-retire', {
         text: 'Final Fund Allocation'
     },
     subtitle: {
-        text: 'Adjusted from '+age_to_start_adjust_port_allocations+ ' yrs old to '+age_to_end_adjust_port_allocations+' yrs old.'
+        text: 'Allocation by  '+age_to_end_adjust_port_allocations+ ' yrs old'
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
     accessibility: {
         point: {

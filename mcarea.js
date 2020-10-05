@@ -4,6 +4,9 @@ var MCArea = Highcharts.chart('container-mcarea', {
     credits: {
         enabled: false
     },
+    lang: {
+        thousandsSep: ','
+      },
     exporting: {
         enabled: true,
         scale: 6,
@@ -27,6 +30,9 @@ var MCArea = Highcharts.chart('container-mcarea', {
     yAxis: {
         title: {
             text: "Account Value ($)"
+        },
+        labels: {
+            format: '${value}'
         },
         min: 0,
         max: 1000000
@@ -76,7 +82,7 @@ var MCArea = Highcharts.chart('container-mcarea', {
         },
         {
             name: '10th-90th Percentile',
-            visible: false,
+            visible: true,
             data: null,
             type: 'arearange',
             lineWidth: 0,
