@@ -302,7 +302,8 @@ const postoptions = {
 
 
        $.get( "https://widgets.eadvisor.app/gethistdata/", function( data ) {
-  alert( "Data Loaded: " + data );
+  console.log( data );
+  console.log(JSON.stringify(data));
 });
 
 
