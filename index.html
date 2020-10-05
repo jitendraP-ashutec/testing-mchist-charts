@@ -300,39 +300,8 @@ const postoptions = {
         "nsim": 1000
 };
 
-/*
-axios.defaults.baseURL = 'https://widgets.eadvisor.app';
-axios.defaults.headers.post['Content-Type'] ='application/json;charset=utf-8';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
-// POST to monte carlo worker (charts labeled 100 - 199)
-const mcpostdataout = axios.post('/getmcdata/',
- postoptions
- ).then((response) => {
-  console.log(response);
-}, (error) => {
-  console.log(error);
-});
-
-
-
-// POST to historical worker (charts labeled 200 - 299)
-const histpostdataout = axios.post('/gethistdata/',{
-  headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
-      mode: 'no-cors',
-},
-postoptions).then((response) => {
-  console.log(response);
-}, (error) => {
-  console.log(error);
-});
-*/
-
-$.post('https://widgets.eadvisor.app/gethistdata/',  // url
-postoptions, // data to be submit
+$.get('https://widgets.eadvisor.app/gethistdata/',  // url
        function(data, status, xhr) {   // success callback function
                 alert('status: ' + status + ', data: ' + data.responseData);
             },
