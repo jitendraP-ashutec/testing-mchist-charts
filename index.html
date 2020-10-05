@@ -305,8 +305,10 @@ var settingsHIST = {
   "url": "https://widgets.eadvisor.app/gethistdata/",
   "method": "POST",
   "timeout": 0,
+  crossDomain: true,
   "headers": {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
   },
   "data": postoptions
 };
@@ -315,23 +317,24 @@ var HISTPOST = $.ajax(settingsHIST).done(function (response) {
   console.log(response);
 });
 
-/*
 var settingsMC = {
   "url": "https://widgets.eadvisor.app/getmcdata/",
   "method": "POST",
   "timeout": 0,
+  crossDomain: true,
   "headers": {
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
   },
   "data": postoptions
 };
 
-var MCPOST = $.ajax(settingsMC).done(function (response) {
+var MCPOST = $.ajax(settingsHIST).done(function (response) {
   console.log(response);
 });
 
-console.log(JSON.parse(MCPOST));
-*/
+console.log(MCPOST);
+
 
 
 </script>
