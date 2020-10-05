@@ -101,10 +101,10 @@ const postoptions = {
         "age_to_end_adjust_port_allocations": age_to_end_adjust_port_allocations,
         "desired_legacy_amount": 100000,
 
-        "annualwithdrawalneeds": 24000,
-        "annualwithdrawalwants": 4000,
-        "annualretirementwithdrawalneeds": 24000,
-        "annualretirementwithdrawalwants": 4000,
+        "annualwithdrawalneeds": 27000,
+        "annualwithdrawalwants": 6000,
+        "annualretirementwithdrawalneeds": 27000,
+        "annualretirementwithdrawalwants": 6000,
         "bigexpenses": [0 , 0, 10000, 0, 0, 0],
         "bigexpensesyear": [2022, 2024, 2025, 2026, 2025, 2021],
         "monthlyclientsocialsecurity": 500,
@@ -334,7 +334,14 @@ $.ajax(settingsMC).done(function (response) {
 
 function updateMCCharts(response) {
   console.log(response);
-  console.log(response.palive)
+  //console.log(response.palive)
+
+  MCPAlive.update({
+    series: [{
+        data: response.palive,
+    }]
+  })
+
 }
 
 function updateHISTCharts(response) {
