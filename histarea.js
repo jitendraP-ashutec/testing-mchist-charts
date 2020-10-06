@@ -53,12 +53,11 @@ var HISTArea = Highcharts.chart('container-histarea', {
     tooltip: {
         xDateFormat: '%Y',
         crosshairs: true,
-        shared: true,
+        split: true,
         valuePrefix: '$',
         valueDecimals: 0,
         animation: false,
-        shadow: false,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>"
+        shadow: false
     },
 
     series: [{

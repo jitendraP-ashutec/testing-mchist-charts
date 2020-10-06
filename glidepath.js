@@ -43,7 +43,7 @@ var glidpathchart = Highcharts.chart('container-glidechart', {
         }
     },
     tooltip: {
-        pointFormat: '<span style="color:{series.color}"><b>{series.name}</b></span><b>: {point.percentage:.1f}%</b><br/>',
+        pointFormat: '<span style="color:{series.color}"><b>{series.name}</b></span><b>: {point.percentage:.0f}%</b><br/>',
         split: true
     },
     plotOptions: {

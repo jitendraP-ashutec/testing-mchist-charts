@@ -31,7 +31,7 @@ var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
         text: null
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
     },
     accessibility: {
         point: {

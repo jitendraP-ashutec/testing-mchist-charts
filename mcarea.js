@@ -40,12 +40,11 @@ var MCArea = Highcharts.chart('container-mcarea', {
     tooltip: {
         xDateFormat: '%Y',
         crosshairs: true,
-        shared: true,
+        split: true,
         valuePrefix: '$',
         animation: false,
         shadow: false,
-        valueDecimals: 0,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>"
+        valueDecimals: 0
     },
     chart: {
         zoomType: 'xy',
@@ -61,7 +60,7 @@ var MCArea = Highcharts.chart('container-mcarea', {
             boostThreshold: 0,
             data: null,
             marker: {
-                enabled: false
+                enabled: true
             }
         },
         {
