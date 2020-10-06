@@ -8,6 +8,7 @@
     integrity="sha256-CymzXFABoVZscOBGsQGzaIRHn/of09Xj2VuxPPeLPg8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/modules/exporting.js"
     integrity="sha256-yr/VcTNtv0Q6nAc7jMKmx/mmwu/51GNIvTGqrLNm9so=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highcharts@8.2.0/modules/offline-exporting.js" integrity="sha256-ctkyXnQruzgziWxhpoc/ebkzyZ3uiFAt7l0TRL3lrRk=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
@@ -50,10 +51,11 @@
 
 <body>
   <p>Overview: Data for historical info comes from https://workers.eadvisor.app/gethistdata, Data for monte carlo (simulation) info comes from https://workers.eadvisor.app/getmcdata, Data for investment overview/social security/perc allocations/invest map comes from https://widgets.eadvisor.app/getoverview </p>
-  <br><br><br>
-  <p>Link to view validation & fields for POST requests:  https://docs.google.com/spreadsheets/d/1EoeZUrTeCG4U1NN_s9dIaDiA4Fl9STOG_5UW2FQhHqk/edit?usp=sharing</p><br>
+  <p>Important Highcharts Note:  Be sure to load Boost, More, Exporting, and Offline Exporting modules</p>
+  <br> <br><br>
+  <p>Link to view validation & fields for POST/GET requests:  https://docs.google.com/spreadsheets/d/1EoeZUrTeCG4U1NN_s9dIaDiA4Fl9STOG_5UW2FQhHqk/edit?usp=sharing</p><br>
   
-  <input type="checkbox" id="sim_scenarios" value="1" oninput="runWorkers(this)" />Run Scenario POST Request (when checked single scenario is loaded)<br><br>
+  <input type="checkbox" id="sim_scenarios" value="1" oninput="runWorkers(this)" />Run Scenario GET/POST Request (when checked single scenario is loaded)<br><br>
 
 
 
@@ -715,7 +717,7 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
       // Percent Allocations (Pre-Retire Graph)
       percallocation_preretire.update({
           subtitle: {
-              text: 'Allocation starting to adjust at ' + response.startportadjust + ' yrs old'
+              text: response.startportadjust
           },
         series: [{
         data: [{
@@ -734,7 +736,7 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
       // Percent Allocations (Retire Graph)
       percallocation_retire.update({
           subtitle: {
-              text: 'Allocation by  '+response.endportadjust+ ' yrs old'
+              text: response.endportadjust
           },
           series: [{
           data: [{
