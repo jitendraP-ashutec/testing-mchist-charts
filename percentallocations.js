@@ -1,5 +1,5 @@
 
-Highcharts.chart('percallocations-preretire', {
+var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
     colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false
@@ -28,7 +28,7 @@ Highcharts.chart('percallocations-preretire', {
         text: 'Starting Fund Allocation'
     },
     subtitle: {
-        text: 'Allocation starting to adjust at '+age_to_start_adjust_port_allocations+' yrs old'
+        text: null
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -53,23 +53,23 @@ Highcharts.chart('percallocations-preretire', {
         colorByPoint: true,
         data: [{
             name: 'Stock',
-            y: preretire_stockallocation,
+            y: null,
             sliced: true,
             selected: true
         }, {
             name: 'Treasury Bonds',
-            y: preretire_tbondallocation
+            y: null
         }, {
             name: 'Corporate Bonds',
-            y: preretire_corpbondallocation
+            y: null
         }, {
             name: 'Cash',
-            y: preretire_cashallocation
+            y: null
         }]
     }]
 });
 
-Highcharts.chart('percallocations-retire', {
+var percallocation_retire = Highcharts.chart('percallocations-retire', {
     colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false
@@ -98,7 +98,7 @@ Highcharts.chart('percallocations-retire', {
         text: 'Final Fund Allocation'
     },
     subtitle: {
-        text: 'Allocation by  '+age_to_end_adjust_port_allocations+ ' yrs old'
+        text: null
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -123,18 +123,18 @@ Highcharts.chart('percallocations-retire', {
         colorByPoint: true,
         data: [{
             name: 'Stock',
-            y: retire_stockallocation,
+            y: null,
             sliced: true,
             selected: true
         }, {
             name: 'Treasury Bonds',
-            y: retire_tbondallocation
+            y: null
         }, {
             name: 'Corporate Bonds',
-            y: retire_corpbondallocation
+            y: null
         }, {
             name: 'Cash',
-            y: retire_cashallocation
+            y: null
         }]
     }]
 });
