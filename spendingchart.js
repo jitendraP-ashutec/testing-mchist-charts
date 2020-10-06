@@ -41,14 +41,14 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
             }
           }
     },
-    yAxis: [{ // Primary yAxis
+    yAxis: [{ // Primary y Axis
         labels: {
             format: '${value}'
         },
         title: {
             text: 'Inflation Adjusted Rolling 1 Year Spending/Income'
         }
-    }, { // Secondary yAxis
+    }, { // Secondary y Axis
         title: {
             text: 'Withdraw Rate (%)'
         },
