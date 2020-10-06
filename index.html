@@ -421,7 +421,13 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
         r_stock: 60, // retirement stock/bond/cash allocation for custom portfolio only
         r_tbond: 15,
         r_corpbond: 15,
-        r_cash: 10
+        r_cash: 10,
+        pr_castock: 75, // CANADA: pre-retirement stock/bond/cash allocation for custom portfolio only
+        pr_catbond: 10,
+        pr_cacash: 5,
+        r_castock: 60, // CANADA: retirement stock/bond/cash allocation for custom portfolio only
+        r_catbond: 15,
+        r_cacash: 10,
       },
       function(data) {
         updateOverviewData(data);
