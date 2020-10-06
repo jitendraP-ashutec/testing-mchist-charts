@@ -81,7 +81,7 @@
   <hr>
   <div style="width: 100%; display: table;">
     <div style="display: table-row">
-      <div style="width: 600px; display: table-cell;">
+      <div style="width: 50%; display: table-cell;">
         <figure class="highcharts-figure">
           <p>Chart 101: Monte Carlo Percent / When a scenario runs (checkbox at top) this is Chart 104</p>
           <div id="container-mcperc"></div>
@@ -99,7 +99,7 @@
   <hr>
   <div style="width: 100%; display: table;">
     <div style="display: table-row">
-      <div style="width: 600px; display: table-cell;">
+      <div style="width: 50%; display: table-cell;">
         <figure class="highcharts-figure">
           <p>Chart 201: Historical Percent / When a scenario runs (checkbox at top) this is Chart 204</p>
           <div id="container-histperc"></div>
@@ -138,7 +138,7 @@
   <div style="width: 100%; display: table;">
     <p>Chart 500: % Allocation Chart</p>
     <div style="display: table-row">
-      <div style="width: 600px; display: table-cell;">
+      <div style="width: 50%; display: table-cell;">
         <figure class="highcharts-figure">
           <div id="percallocations-preretire"></div>
         </figure>
@@ -316,6 +316,7 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
   <script src="spendingchart.js"></script>
   <script src="postoptions.js"></script>
   <script src="postoptions_scenarios.js"></script>
+  <script src="getoptions.js"></script>
   <script src="glidepath.js"></script>
   <script src="percentallocations.js"></script>
 
@@ -398,37 +399,7 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
 
       // GET Request to Overview function
       // Request sent to https://widgets.eadvisor.app/getoverview/ with parameters shown below
-      $.getJSON( "https://widgets.eadvisor.app/getoverview/",
-      {
-        maxage: 90, // max age to plan
-        usecan: 0, // use canandian funds
-        coclient: 0, // co client selected (0=false, 1=true)
-        c_birthd: 30, // client birth day
-        c_birthm: 1, // client birth month
-        c_birthy: 1960, // client birth year
-        co_birthd: 30, // client birth day
-        co_birthm: 1, // client birth month
-        co_birthy: 1960, // client birth year
-        usecustom: 0, // use custom portfolio checkbox (0=false, 1=true)
-        pa_adjust_s: 70, // age of client to start adjusting portfolio
-        pa_adjust_e: 75, // age of client to end adjusting portfolio
-        pr_port: 0, // pre-retirement portfolio selected (0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
-        r_port: 0, // retirement portfolio selected (0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
-        pr_stock: 75, // pre-retirement stock/bond/cash allocation for custom portfolio only
-        pr_tbond: 10,
-        pr_corpbond: 10,
-        pr_cash: 5,
-        r_stock: 60, // retirement stock/bond/cash allocation for custom portfolio only
-        r_tbond: 15,
-        r_corpbond: 15,
-        r_cash: 10,
-        pr_castock: 75, // CANADA: pre-retirement stock/bond/cash allocation for custom portfolio only
-        pr_catbond: 10,
-        pr_cacash: 5,
-        r_castock: 60, // CANADA: retirement stock/bond/cash allocation for custom portfolio only
-        r_catbond: 15,
-        r_cacash: 10,
-      },
+      $.getJSON( "https://widgets.eadvisor.app/getoverview/", getoptionsforoverview,
       function(data) {
         updateOverviewData(data);
       })
@@ -714,10 +685,10 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
       document.getElementById("socialsecurityoverviewtext").innerHTML = response.social_security_desc;
 
       // Social Security % of Full #
-      document.getElementById("socialsecuritypercoffull").innerHTML = response.social_security_percent;
+      document.getElementById("socialsecuritypercoffull").innerHTML = "For Client: " + response.social_security_percent_client + " for co-client: " + response.social_security_percent_coclient;
 
       // Social Security % of Full for Widow #
-      document.getElementById("socialsecuritypercoffullwidow").innerHTML = response.social_security_percentwidow;
+      document.getElementById("socialsecuritypercoffullwidow").innerHTML = "For Client: " + response.social_security_percentwidow_client + " for co-client: " + response.social_security_percentwidow_coclient;
 
 
       // Percent Allocations (Pre-Retire Graph)
