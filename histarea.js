@@ -34,14 +34,33 @@ var HISTArea = Highcharts.chart('container-histarea', {
         text: null
     },
     xAxis: {
-        type: 'datetime'
+        type: 'datetime',
+        crosshair: {
+            width: 2,
+            color: 'gray',
+            dashStyle: 'shortdot'
+        },
+        labels: {
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
+        }
     },
     yAxis: {
         title: {
-            text: "Account Value ($)"
+            text: "Account Value",
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         },
         labels: {
-            format: '${value}'
+            format: '${value}',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.8rem'
+            }
         },
         min: 0,
         max: 1000000
@@ -51,13 +70,17 @@ var HISTArea = Highcharts.chart('container-histarea', {
         shadow: false
     },
     tooltip: {
-        xDateFormat: '%Y',
+        xDateFormat: '<b>%Y</b>',
         crosshairs: true,
         split: true,
         valuePrefix: '$',
         valueDecimals: 0,
         animation: false,
-        shadow: false
+        shadow: false,
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
 
     series: [{

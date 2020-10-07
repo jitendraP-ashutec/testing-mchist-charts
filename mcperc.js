@@ -1,6 +1,5 @@
 
 var MCPAlive = Highcharts.chart('container-mcperc', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false
     },
@@ -9,14 +8,9 @@ var MCPAlive = Highcharts.chart('container-mcperc', {
         scale: 6,
         buttons: {
             contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
+                menuItems: ["downloadJPEG", "downloadPNG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
             }
         }
-    },
-    boost: {
-        enabled: true,
-        useGPUTranslations: true,
-        usePreallocated: true
     },
     chart: {
         plotBackgroundColor: null,
@@ -62,7 +56,6 @@ var MCPAlive = Highcharts.chart('container-mcperc', {
 
 
 var MCPAliveLegacy = Highcharts.chart('container-mcperc-legacy', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false
     },
@@ -71,14 +64,9 @@ var MCPAliveLegacy = Highcharts.chart('container-mcperc-legacy', {
         scale: 6,
         buttons: {
             contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
+                menuItems: ["downloadJPEG", "downloadPNG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
             }
         }
-    },
-    boost: {
-        enabled: true,
-        useGPUTranslations: true,
-        usePreallocated: true
     },
     chart: {
         plotBackgroundColor: null,

@@ -22,29 +22,62 @@ var glidpathchart = Highcharts.chart('container-glidechart', {
         type: 'area'
     },
     title: {
-        text: 'Investment Allocations'
+        text: 'Investment Allocations By Year',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     subtitle: {
-        text: null
+        text: 'Adjusting your allocations each year based on current and target portfolios selected',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     xAxis: {
         categories: null,
-        tickmarkPlacement: 'on',
-        title: {
-            enabled: false
+        crosshair: {
+            width: 2,
+            color: 'gray',
+            dashStyle: 'shortdot'
+        },
+        labels: {
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         }
     },
     yAxis: {
         labels: {
-            format: '{value}%'
+            format: '{value}%',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
+            }
         },
         title: {
             enabled: false
         }
     },
     tooltip: {
-        pointFormat: '<span style="color:{series.color}"><b>{series.name}</b></span><b>: {point.percentage:.0f}%</b><br/>',
-        split: true
+        split: true,
+        animation: false,
+        shadow: false,
+        formatter: function () {
+            // The first returned item is the header, subsequent items are the points
+            return ['<b>' + this.x + '</b>'].concat(
+                this.points ?
+                    this.points.map(function (point) {
+                        return '<b>' + point.series.name + ': ' + Math.round(point.y) + '%</b>';
+                    }) : []
+            );
+        },
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     plotOptions: {
         area: {

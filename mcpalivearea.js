@@ -41,6 +41,10 @@ var MCPAliveArea = Highcharts.chart('palivechart', {
         labels: {
             formatter: function() {
               return Highcharts.dateFormat('%Y', this.value);
+            },
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
             }
           }
     },
@@ -51,8 +55,12 @@ yAxis: {
     min: 0,
     max: 100,
         labels: {
-            format: '{value}%'
-        }
+            format: '{value}%',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
+        },
 },
     plotOptions: {
         series: {
@@ -62,12 +70,16 @@ yAxis: {
         }
     },
     tooltip: {
-        xDateFormat: '%Y',
+        xDateFormat: '<b>%Y</b>',
         valueDecimals: 0,
         valueSuffix: '%',
         animation: false,
         shadow: false,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>"
+        headerFormat: "<span style='font-size: 1.4rem'><b>{point.key}</b></span><br/>",
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     series: [{
         name: '% Alive',

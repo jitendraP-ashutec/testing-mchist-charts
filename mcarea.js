@@ -1,6 +1,5 @@
 
 var MCArea = Highcharts.chart('container-mcarea', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
     credits: {
         enabled: false
     },
@@ -25,31 +24,54 @@ var MCArea = Highcharts.chart('container-mcarea', {
         text: null
     },
     xAxis: {
-        type: 'datetime'
+        type: 'datetime',
+        crosshair: {
+            width: 2,
+            color: 'gray',
+            dashStyle: 'shortdot'
+        },
+        labels: {
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
+        }
     },
     yAxis: {
         title: {
-            text: "Account Value ($)"
+            text: "Account Value",
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         },
         labels: {
-            format: '${value}'
+            format: '${value}',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.8rem'
+            }
         },
         min: 0,
         max: 1000000
     },
     tooltip: {
-        xDateFormat: '%Y',
+        xDateFormat: '<b>%Y</b>',
         crosshairs: true,
         split: true,
         valuePrefix: '$',
         animation: false,
         shadow: false,
-        valueDecimals: 0
+        valueDecimals: 0,
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     chart: {
         zoomType: 'xy',
         panning: true,
-        panKey: 'shift',
+        panKey: 'shift'
     },
     series: [
         {
