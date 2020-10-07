@@ -19,7 +19,7 @@ var glidpathchart = Highcharts.chart('container-glidechart', {
         text: 'Adjusting your allocations each year based on current and target portfolios selected',
         style: {
             'font-family': 'Open Sans,sans-serif',
-            'font-size': '1rem'
+            'font-size': '0.8rem'
         }
     },
     xAxis: {

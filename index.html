@@ -14,7 +14,24 @@
 
     <script src="generate.lead.url.js"></script>
 
-
+<style>
+  .highcharts-legend-item {
+    font-family: 'Open Sans,sans-serif';
+    font-size: '1rem';
+  }
+  .highcharts-title {
+    font-family: 'Open Sans,sans-serif';
+  }
+  .highcharts-subtitle {
+    font-family: 'Open Sans,sans-serif';
+  }
+  .highcharts-axis-labels {
+    font-family: 'Open Sans,sans-serif';
+  }
+  .highcharts-tooltip {
+    font-family: 'Open Sans,sans-serif';
+  }
+</style>
   <!-- These are some inputs to the POST command to the function, these will come from the Database -->
   <script>
     Highcharts.setOptions({
@@ -86,7 +103,7 @@
     <div id="container-histarea"></div>
   </figure>
   <button onclick="zoominonworsthist()">Zoom in On Worst Years</button>
-  <button onclick="zoominonworsthistreset()">Zoom on All Years</button>
+  <button onclick="zoominonworsthistreset()">Reset Zoom</button>
 
   <hr>
   <figure class="highcharts-figure">
@@ -633,18 +650,24 @@ document.getElementById("socialsecurityoptions").innerHTML = socialsecuritydropd
           max: HISTArea_chart_max
         },
         series: [{
+          name: 'Worst Year (' + response.date_worstresult_1st + ')',
           data: chart_worst // worst
         }, {
+          name: '2nd Worst Year (' + response.date_worstresult_2nd + ')',
           data: chart_2ndworst // 2nd worst
         },
         {
+          name: '3rd Worst Year (' + response.date_worstresult_3rd + ')',
           data: chart_3rdworst // 3rd worst
         }, {
+          name: 'Best Year (' + response.date_bestresult_1st + ')',
           data: chart_best //  best
         }, {
+          name: '2nd Best Year (' + response.date_bestresult_2nd + ')',
           data: chart_2ndbest // 2nd best
         },
         {
+          name: '3rd Best Year (' + response.date_bestresult_3rd + ')',
           data: chart_3rdbest // 3rd best
         }, {
           data: chart_averageresult // Average

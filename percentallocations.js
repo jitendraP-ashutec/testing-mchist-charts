@@ -1,18 +1,5 @@
 
 var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    credits: {
-        enabled: false
-    },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,
@@ -83,19 +70,6 @@ var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
 });
 
 var percallocation_retire = Highcharts.chart('percallocations-retire', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    credits: {
-        enabled: false
-    },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,

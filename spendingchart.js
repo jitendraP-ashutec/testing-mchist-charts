@@ -92,7 +92,7 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         split: true,
         animation: false,
         shadow: false,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>",
+        headerFormat: "<span><b>{point.key}</b></span><br/>",
         style: {
             'font-family': 'Open Sans,sans-serif'
         }
@@ -213,7 +213,7 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         split: true,
         animation: false,
         shadow: false,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>",
+        headerFormat: "<span><b>{point.key}</b></span><br/>",
         style: {
             'font-family': 'Open Sans,sans-serif'
         }
