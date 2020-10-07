@@ -1,17 +1,5 @@
 
 var MCPAlive = Highcharts.chart('container-mcperc', {
-    credits: {
-        enabled: false
-    },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadJPEG", "downloadPNG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
@@ -56,18 +44,6 @@ var MCPAlive = Highcharts.chart('container-mcperc', {
 
 
 var MCPAliveLegacy = Highcharts.chart('container-mcperc-legacy', {
-    credits: {
-        enabled: false
-    },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadJPEG", "downloadPNG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,

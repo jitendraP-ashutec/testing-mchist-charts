@@ -90,15 +90,3 @@ function divide2Arrays(arraynum, arrayden) {
 
     return(arraydivout);
 }
-
-function standardDeviation(values) {
-    let avg = arrAvg(values);
-
-    let squareDiffs = values.map(function(value){
-      return Math.pow(value - avg, 2);
-    });
-
-    let avgSquareDiff = arrAvg(squareDiffs);
-
-    return Math.sqrt(avgSquareDiff);
-}

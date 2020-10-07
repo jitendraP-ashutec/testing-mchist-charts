@@ -17,6 +17,25 @@
 
   <!-- These are some inputs to the POST command to the function, these will come from the Database -->
   <script>
+    Highcharts.setOptions({
+      lang: {
+        thousandsSep: ','
+      },
+      credits: {
+        enabled: false
+      },
+      colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
+      exporting: {
+          enabled: true,
+          scale: 5,
+          buttons: {
+              contextButton: {
+                  menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
+              }
+          }
+      }
+    });
+
     var minokperc = 70;
 
 
@@ -61,11 +80,6 @@
 
 
 
-  <hr>
-  <figure class="highcharts-figure">
-    <p>Chart 501: Glidepath</p>
-    <div id="container-glidechart"></div>
-  </figure>
   <hr>
   <figure class="highcharts-figure">
     <p>Chart 200: Historical Area / When a scenario runs (checkbox at top) this is Chart 203</p>
@@ -138,19 +152,25 @@
 
   <hr>
   <div style="width: 100%; display: table;">
-    <p>Chart 500: % Allocation Chart</p>
-    <div style="display: table-row">
-      <div style="width: 50%; display: table-cell;">
+    <p>Chart 500: % Allocation Chart & Chart 501 Glide Path [Note: to be displayed on the dashboard in accordian & on the cleint information entry on the Investment section]</p>
+    <div style="display: table-row"></div>
+      <div style="width: 30%; display: table-cell;">
         <figure class="highcharts-figure">
           <div id="percallocations-preretire"></div>
         </figure>
       </div>
-      <div style="display: table-cell;">
+      <div style="width: 30%; display: table-cell;">
         <figure class="highcharts-figure">
           <div id="percallocations-retire"></div>
         </figure>
       </div>
-    </div>
+      <div style="display: table-cell;">
+        <figure class="highcharts-figure">
+          
+          <div id="container-glidechart"></div>
+        </figure>
+    </div> 
+   </div>
   </div>
 
 

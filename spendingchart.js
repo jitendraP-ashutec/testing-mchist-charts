@@ -1,21 +1,6 @@
+
 // Historical Version
 var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    credits: {
-        enabled: false
-    },
-    lang: {
-        thousandsSep: ','
-      },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,
@@ -30,7 +15,18 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         enabled: false
     },
     title: {
-        text: 'Rolling 12-month Net Spending & Average Withdrawal Rate'
+        text: 'Rolling Yearly Net Spending & Average Withdrawal Rate',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
+    },
+    subtitle: {
+        text: 'Inflation Adjusted Yearly Spending Bar Chart, with the Average Widthrdawal Rate Line.',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     xAxis: {
         categories: null,
@@ -38,22 +34,46 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         labels: {
             formatter: function() {
               return Highcharts.dateFormat('%Y', this.value);
+            },
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
             }
+          },
+          style: {
+              'font-family': 'Open Sans,sans-serif',
+              'font-size': '1rem'
           }
     },
     yAxis: [{ // Primary y Axis
         labels: {
-            format: '${value}'
+            format: '${value}',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
+            }
         },
         title: {
-            text: 'Inflation Adjusted Rolling 1 Year Spending/Income'
+            text: 'Rolling 1 Year Spending/Income',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         }
     }, { // Secondary y Axis
         title: {
-            text: 'Withdraw Rate (%)'
+            text: 'Withdraw Rate (%)',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         },
         labels: {
-            format: '{value}%'
+            format: '{value}%',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
+            }
         },
         opposite: true
     }],
@@ -68,14 +88,17 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         align: 'center'
     },
     tooltip: {
-        xDateFormat: '%b %Y',
-        shared: true,
+        xDateFormat: '%Y',
+        split: true,
         animation: false,
         shadow: false,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>"
+        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>",
+        style: {
+            'font-family': 'Open Sans,sans-serif'
+        }
     },
     series: [{
-        name: 'Net Spending/Income',
+        name: 'Net Spending (-) or Income (+)',
         data: null,
         type: 'column',
         yAxis: 0,
@@ -86,36 +109,23 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         },{
             color: '#A6FFA6'
         }],
-        animation: false
+        animation: false,
+        color: '#000000'
     },{
-        name: 'Average Withdraw/Deposit Rate (%)',
+        name: 'Average Withdraw (-) or Deposit (+) Rate',
         data: null,
         yAxis: 1,
         type: 'spline',
         tooltip: {valueDecimals: 1,valueSuffix: '%'},
-        animation: false
+        animation: false,
+        color: '#7900FF'
     }
     ]
 });
 
+/////////////////////////////////////////////////////////////////
 // Monte Carlo Version
 var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    credits: {
-        enabled: false
-    },
-    lang: {
-        thousandsSep: ','
-      },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,
@@ -130,7 +140,18 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         enabled: false
     },
     title: {
-        text: 'Rolling 12-month Net Spending & Average Withdrawal Rate'
+        text: 'Rolling Yearly Net Spending & Average Withdrawal Rate',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
+    },
+    subtitle: {
+        text: 'Inflation Adjusted Yearly Spending Bar Chart, with the Average Widthrdawal Rate Line.',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     xAxis: {
         categories: null,
@@ -138,22 +159,42 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         labels: {
             formatter: function() {
               return Highcharts.dateFormat('%Y', this.value);
+            },
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
             }
           }
     },
     yAxis: [{ // Primary yAxis
         labels: {
-            format: '${value}'
+            format: '${value}',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
+            }
         },
         title: {
-            text: 'Inflation Adjusted Rolling 1 Year Spending/Income'
+            text: 'Rolling 1 Year Spending/Income',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         }
     }, { // Secondary yAxis
         title: {
-            text: 'Withdraw Rate (%)'
+            text: 'Withdraw Rate (%)',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '1rem'
+            }
         },
         labels: {
-            format: '{value}%'
+            format: '{value}%',
+            style: {
+                'font-family': 'Open Sans,sans-serif',
+                'font-size': '0.9rem'
+            }
         },
         opposite: true
     }],
@@ -168,14 +209,17 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         align: 'center'
     },
     tooltip: {
-        xDateFormat: '%b %Y',
-        shared: true,
+        xDateFormat: '%Y',
+        split: true,
         animation: false,
         shadow: false,
-        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>"
+        headerFormat: "<span style='font-size: 14px'><b>{point.key}</b></span><br/>",
+        style: {
+            'font-family': 'Open Sans,sans-serif'
+        }
     },
     series: [{
-        name: 'Net Spending/Income',
+        name: 'Net Spending (-) or Income (+)',
         data: null,
         type: 'column',
         yAxis: 0,
@@ -186,14 +230,16 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         },{
             color: '#A6FFA6'
         }],
-        animation: false
+        animation: false,
+        color: '#000000'
     },{
-        name: 'Average Withdraw/Deposit Rate (%)',
+        name: 'Average Withdraw (-) or Deposit (+) Rate',
         data: null,
         yAxis: 1,
         type: 'spline',
         tooltip: {valueDecimals: 1,valueSuffix: '%'},
-        animation: false
+        animation: false,
+        color: '#7900FF'
     }
     ]
 });

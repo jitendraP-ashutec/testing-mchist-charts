@@ -1,20 +1,5 @@
 
 var MCArea = Highcharts.chart('container-mcarea', {
-    credits: {
-        enabled: false
-    },
-    lang: {
-        thousandsSep: ','
-      },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,

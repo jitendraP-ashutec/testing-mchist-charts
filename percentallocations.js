@@ -25,12 +25,22 @@ var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
         type: 'pie'
     },
     title: {
-        text: 'Starting Fund Allocation'
+        text: 'Starting Fund Allocation',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     subtitle: {
-        text: null
+        text: null,
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     tooltip: {
+        animation: false,
+        shadow: false,
         pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
     },
     accessibility: {
@@ -44,7 +54,10 @@ var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.0f} %'
+                format: '<b>{point.name}</b>: {point.percentage:.0f} %',
+                style: {
+                    'font-family': 'Open Sans,sans-serif'
+                }
             }
         }
     },
@@ -52,18 +65,18 @@ var percallocation_preretire = Highcharts.chart('percallocations-preretire', {
         name: 'Allocation',
         colorByPoint: true,
         data: [{
-            name: 'Stock',
+            name: '<b>Stock</b>',
             y: null,
             sliced: true,
             selected: true
         }, {
-            name: 'Treasury Bonds',
+            name: '<b>Treasury</b><br><b>Bonds</b>',
             y: null
         }, {
-            name: 'Corporate Bonds',
+            name: '<b>Corporate</b><br><b>Bonds</b>',
             y: null
         }, {
-            name: 'Cash',
+            name: '<b>Cash</b>',
             y: null
         }]
     }]
@@ -95,13 +108,25 @@ var percallocation_retire = Highcharts.chart('percallocations-retire', {
         type: 'pie'
     },
     title: {
-        text: 'Final Fund Allocation'
+        text: 'Final Fund Allocation',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     subtitle: {
-        text: null
+        text: null,
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
     },
     accessibility: {
         point: {
@@ -114,7 +139,10 @@ var percallocation_retire = Highcharts.chart('percallocations-retire', {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.0f} %'
+                format: '<b>{point.name}</b>: {point.percentage:.0f} %',
+                style: {
+                    'font-family': 'Open Sans,sans-serif'
+                }
             }
         }
     },
@@ -122,18 +150,18 @@ var percallocation_retire = Highcharts.chart('percallocations-retire', {
         name: 'Allocation',
         colorByPoint: true,
         data: [{
-            name: 'Stock',
+            name: '<b>Stock</b>',
             y: null,
             sliced: true,
             selected: true
         }, {
-            name: 'Treasury Bonds',
+            name: '<b>Treasury</b><br><b>Bonds</b>',
             y: null
         }, {
-            name: 'Corporate Bonds',
+            name: '<b>Corporate</b><br><b>Bonds</b>',
             y: null
         }, {
-            name: 'Cash',
+            name: '<b>Cash</b>',
             y: null
         }]
     }]

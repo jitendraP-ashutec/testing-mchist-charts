@@ -1,22 +1,6 @@
 
 
 var HISTArea = Highcharts.chart('container-histarea', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    credits: {
-        enabled: false
-    },
-    lang: {
-        thousandsSep: ','
-      },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,

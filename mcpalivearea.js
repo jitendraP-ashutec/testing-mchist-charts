@@ -2,22 +2,6 @@ let colorjson=[{value:0,color:"#FF0000"},{value:1,color:"#FF0000"},{value:2,colo
 
 
 var MCPAliveArea = Highcharts.chart('palivechart', {
-    colors: ['#2E93fA', '#66DA26', '#546E7A', '#E91E63', '#FF9800', '#00FFF5', '#9F00FF'],
-    lang: {
-        thousandsSep: ','
-      },
-    credits: {
-        enabled: false
-    },
-    exporting: {
-        enabled: true,
-        scale: 6,
-        buttons: {
-            contextButton: {
-                menuItems: ["downloadPNG", "downloadJPEG", "downloadPDF", "downloadSVG", "separator", "viewFullscreen", "printChart", 'downloadCSV', 'downloadXLS']
-            }
-        }
-    },
     boost: {
         enabled: true,
         useGPUTranslations: true,
@@ -33,7 +17,18 @@ var MCPAliveArea = Highcharts.chart('palivechart', {
         enabled: false
     },
     title: {
-        text: null
+        text: 'Probability of Success By Year',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1.4rem'
+        }
+    },
+    subtitle: {
+        text: 'Probability of having a Portfolio Value Above 0 at a Specific Point in the Future.',
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     xAxis: {
         categories: null,
@@ -50,7 +45,11 @@ var MCPAliveArea = Highcharts.chart('palivechart', {
     },
 yAxis: {
     title: {
-        text: "% Successful Simulations"
+        text: "% Success",
+        style: {
+            'font-family': 'Open Sans,sans-serif',
+            'font-size': '1rem'
+        }
     },
     min: 0,
     max: 100,
@@ -61,10 +60,9 @@ yAxis: {
                 'font-size': '1rem'
             }
         },
-},
+    },
     plotOptions: {
         series: {
-            //fillOpacity: 1,
             pointPadding: 0,
             groupPadding: 0
         }
@@ -82,7 +80,7 @@ yAxis: {
         }
     },
     series: [{
-        name: '% Alive',
+        name: '',
         data: null,
         zones: colorjson
     }]
