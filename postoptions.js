@@ -146,8 +146,8 @@ var postoptions = {
     "scenario_newmortage": false,
     "scenario_newmortage_amounttoincreasemonthly": 1500,
 
-    "scenario_startretirement_with_moreorless": false,
-    "scenario_startretirement_with_moreorless_amountpermonth": 200,
+    "scenario_startretwithdiff": false,
+    "scenario_startretwithdiff_amountpermonth": 200,
 
     "scenario_reducedneeds": false,
     "scenario_reduceneeds_amount": 3000,

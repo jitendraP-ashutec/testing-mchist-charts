@@ -31,8 +31,8 @@ var postoptions_scenarios = {
     "pa_stock_endCA": 70,
     "pa_treasury_endCA": 10,
     "pa_cash_endCA": 5,
-    "age_to_start_adjust_port_allocations": age_to_start_adjust_port_allocations,
-    "age_to_end_adjust_port_allocations": age_to_end_adjust_port_allocations,
+    "age_to_start_adjust_pa": age_to_start_adjust_pa,
+    "age_to_end_adjust_pa": age_to_end_adjust_pa,
     "desired_legacy_amount": 100000,
 
     "residence": "Ohio",
@@ -149,8 +149,8 @@ var postoptions_scenarios = {
     "scenario_newmortage": false,
     "scenario_newmortage_amounttoincreasemonthly": 1500,
 
-    "scenario_startretirement_with_moreorless": false,
-    "scenario_startretirement_with_moreorless_amountpermonth": 200,
+    "scenario_startretwithdiff": false,
+    "scenario_startretwithdiff_amountpermonth": 200,
 
     "scenario_reducedneeds": false,
     "scenario_reduceneeds_amount": 3000,
