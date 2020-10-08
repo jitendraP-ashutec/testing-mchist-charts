@@ -120,8 +120,8 @@ var postoptions_scenarios = {
     "scenario_socialsecurity_percdec": 25,
 
     "scenario_socialsecurityagechange": false,
-    "scenario_socialsecurityagechange_clientnewage": 69,
-    "scenario_socialsecurityagechange_coclientnewage": 69,
+    "scenario_socialsecurityagechange_clientnewage": '66 + 2 months',
+    "scenario_socialsecurityagechange_coclientnewage": '66 + 5 months',
 
     "scenario_pension_cut": false,
     "scenario_pension_percdec": 25,
@@ -167,11 +167,9 @@ var postoptions_scenarios = {
     "scenario_retirementincome_cut_amount": 500,
 
     "scenario_socialsecurity_benifit_client": false,
-    "scenario_socialsecurity_benifit_client_percreduction": 25,
     "scenario_socialsecurity_benifit_client_age": 75,
     "scenario_socialsecurity_benifit_client_lifeinsurance": 0,
     "scenario_socialsecurity_benifit_coclient": false,
-    "scenario_socialsecurity_benifit_coclient_percreduction": 25,
     "scenario_socialsecurity_benifit_coclient_age": 75,
     "scenario_socialsecurity_benifit_coclient_lifeinsurance": 0,
 
@@ -221,14 +219,14 @@ var postoptions_scenarios = {
     "wr_portfoliobalancedecinc_dec_percent": 90,
     "wr_portfoliobalancedecinc_dec_decrease": 50,
 
-    "wr_bengenfloorceiling_enabled": false,
-    "wr_bengenfloorceiling_decreaseyears": 2,
-    "wr_bengenfloorceiling_decreasepercent": 15,
-    "wr_bengenfloorceiling_spendingdecreasepercent": 10,
-    "wr_bengenfloorceiling_increaseyears": 2,
-    "wr_bengenfloorceiling_increasepercent": 20,
-    "wr_bengenfloorceiling_spendingincreasepercent": 10,
-    "wr_bengenfloorceiling_maxage": 80,
+    "wr_ben_enabled": false,
+    "wr_ben_decreaseyears": 2,
+    "wr_ben_decreasepercent": 15,
+    "wr_ben_spendingdecreasepercent": 10,
+    "wr_ben_increaseyears": 2,
+    "wr_ben_increasepercent": 20,
+    "wr_ben_spendingincreasepercent": 10,
+    "wr_ben_maxage": 80,
 
     "wr_getajob_enabled": false,
     "wr_getajob_maxage": 70,
