@@ -28,8 +28,8 @@ var postoptions = {
     "pa_stock_endCA": 70,
     "pa_treasury_endCA": 10,
     "pa_cash_endCA": 5,
-    "age_to_start_adjust_port_allocations": age_to_start_adjust_port_allocations,
-    "age_to_end_adjust_port_allocations": age_to_end_adjust_port_allocations,
+    "age_to_start_adjust_pa": age_to_start_adjust_pa,
+    "age_to_end_adjust_pa": age_to_end_adjust_pa,
     "desired_legacy_amount": 100000,
 
     "residence": "Ohio",
