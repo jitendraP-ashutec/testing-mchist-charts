@@ -8,6 +8,7 @@ var getoptionsforoverview = {
     co_birthd: 30, // client birth day
     co_birthm: 1, // client birth month
     co_birthy: 1960, // client birth year
+    S0: 1000000, // Value of accounts (sum of Taxable/Other/Retire/non-tax retire accounts)
     usecustom: 0, // use custom portfolio checkbox (0=false, 1=true)
     pa_adjust_s: 70, // age of client to start adjusting portfolio
     pa_adjust_e: 75, // age of client to end adjusting portfolio
