@@ -32,6 +32,11 @@ var postoptions = {
     "age_to_end_adjust_port_allocations": age_to_end_adjust_port_allocations,
     "desired_legacy_amount": 100000,
 
+    "residence": "Ohio",
+    "taxfilingstatus": 0, // Single (0), Married Filing Jointly (1), Married Filing Separately (2), Head of Household (3), Qualifying Widow(er) with Dependent Child (4)
+    "currentlyretired": true,
+    "agetoretire": 65,
+
     "annualwithdrawalneeds": 27000,
     "annualwithdrawalwants": 6000,
     "annualretirementwithdrawalneeds": 27000,

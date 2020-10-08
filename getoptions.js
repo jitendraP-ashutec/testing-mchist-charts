@@ -35,4 +35,8 @@ var getoptionsforoverview = {
     pr_wants: 3000, // (Yearly) Wants calculated in Pre-Retirement
     r_needs: 30000, // (Yearly) Needs calculated in Retirement
     r_wants: 3000, // (Yearly) Wants calculated in Retirement
+    res: "Ohio",
+    tfs: 0, // Single (0), Married Filing Jointly (1), Married Filing Separately (2), Head of Household (3), Qualifying Widow(er) with Dependent Child (4)
+    curret: false,
+    ageret: 65,
   }
