@@ -117,8 +117,8 @@ var postoptions = {
     "scenario_socialsecurity_percdec": 25,
 
     "scenario_socialsecurityagechange": false,
-    "scenario_socialsecurityagechange_clientnewage": '66 + 2 months',
-    "scenario_socialsecurityagechange_coclientnewage": '66 + 5 months',
+    "scenario_socialsecurityagechange_clientnewage": "66 + 2 months",
+    "scenario_socialsecurityagechange_coclientnewage": "66 + 5 months",
 
     "scenario_pension_cut": false,
     "scenario_pension_percdec": 25,
