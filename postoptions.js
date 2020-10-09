@@ -231,5 +231,5 @@ var postoptions = {
     "wr_getajob_percentoforiginal": 100,
     "wr_getajob_monthlyincome": 1000,
 
-    "nsim": 1000
+    "nsim": 700
   };
