@@ -99,7 +99,8 @@
 
   <hr>
   <figure class="highcharts-figure">
-    <p>Chart 200: Historical Area / When a scenario runs (checkbox at top) this is Chart 203</p>
+    <p>Chart 200: Historical Area / When a scenario runs (checkbox at top) this is Chart 203.</p>
+    <p>Highchart options defined in: histarea.js</p>
     <div id="container-histarea"></div>
   </figure>
   <button onclick="zoominonworsthist()">Zoom in On Worst Years</button>
@@ -108,6 +109,7 @@
   <hr>
   <figure class="highcharts-figure">
     <p>Chart 100: Monte Carlo Area / When a scenario runs (checkbox at top) this is Chart 103</p>
+    <p>Highchart options defined in: mcarea.js</p>
     <div id="container-mcarea"></div>
   </figure>
 
@@ -117,12 +119,14 @@
       <div style="width: 50%; display: table-cell;">
         <figure class="highcharts-figure">
           <p>Chart 101: Monte Carlo Percent / When a scenario runs (checkbox at top) this is Chart 104</p>
+          <p>Highchart options defined in: mcperc.js: var MCPAlive</p>
           <div id="container-mcperc"></div>
         </figure>
       </div>
       <div style="display: table-cell;">
         <figure class="highcharts-figure">
           <p>Chart 102: Monte Carlo Legacy Percent / When a scenario runs (checkbox at top) this is Chart 105</p>
+          <p>Highchart options defined in: mcperc.js: var MCPAliveLegacy</p>
           <div id="container-mcperc-legacy"></div>
         </figure>
       </div>
@@ -135,12 +139,14 @@
       <div style="width: 50%; display: table-cell;">
         <figure class="highcharts-figure">
           <p>Chart 201: Historical Percent / When a scenario runs (checkbox at top) this is Chart 204</p>
+          <p>Highchart options defined in: histperc.js: var HISTPAliveLegacy</p>
           <div id="container-histperc"></div>
         </figure>
       </div>
       <div style="display: table-cell;">
         <figure class="highcharts-figure">
           <p>Chart 202: Historical Legacy Percent / When a scenario runs (checkbox at top) this is Chart 205</p>
+          <p>Highchart options defined in: histperc.js: var HISTPAliveLegacy</p>
           <div id="container-histperc-legacy"></div>
         </figure>
       </div>
@@ -151,18 +157,21 @@
   <hr>
   <figure class="highcharts-figure">
     <p>Chart 150 & 151: P Alive Area (150 for all scenarios false, 151 for the scenario that is currently set as true)</p>
+    <p>Highchart options defined in: mcpalivearea.js</p>
     <div id="palivechart"></div>
   </figure>
 
   <hr>
   <figure class="highcharts-figure">
     <p>Chart 260 & 261: Historical Spending Chart [260 is for all scenarios set to false, 261 is for the actively running scenario selected]</p>
+    <p>Highchart options defined in: spendingchart.js: var HISTSpending</p>
     <div id="histyearlyspendingchart"></div>
   </figure>
 
   <hr>
   <figure class="highcharts-figure">
     <p>Chart 160 & 161: Monte Carlo Spending Chart [160 is for all scenarios set to false, 161 is for the actively running scenario selected]</p>
+    <p>Highchart options defined in: spendingchart.js: var MCSpending</p>
     <div id="mcyearlyspendingchart"></div>
   </figure>
 
@@ -170,6 +179,7 @@
   <hr>
   <div style="width: 100%; display: table;">
     <p>Chart 500: % Allocation Chart & Chart 501 Glide Path [Note: to be displayed on the dashboard in accordian & on the cleint information entry on the Investment section]</p>
+    <p>Highchart options defined in: glidepath.js for the Area Chart & percentallocations.js for the pie charts (starting: var percallocation_preretire & ending: var percallocation_retire)</p>
     <div style="display: table-row"></div>
       <div style="width: 30%; display: table-cell;">
         <figure class="highcharts-figure">
@@ -194,8 +204,10 @@
   <hr>
   <h2>Below is the contents of the Marketing Tab</h2>
   <p>This is the embed code they will be able to copy, this embed code is also live updating in the main box titled 'Live Form & Lead Generation Tool Rendered Here'</p>
+  
   <!--<p id="leadurloutputelement"></p>-->
   <xmp id="leadurloutputelement1" style='padding:0px;margin:0px;white-space:nowrap'></xmp>
+
   <script>
     var leadurl_output = getLeadEmbedCode("joshua.c.terrell@gmail.com", 0, 1, 1); //1st field is email address they enter, 2nd field is a number corresponding to the lead form they select in the dropdown, 3rd field is the enable/disable form checkbox, 4th Field is the Compact Form option
     
