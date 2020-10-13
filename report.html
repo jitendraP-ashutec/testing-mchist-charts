@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <script src="./postoptions_report.js"></script>
+</head>
+
+
+
+<body>
+    <button type="button" onclick="downloadreport()">Download Report</button>
+
+
+
+
+    <script>
+        // Does a POST Request with options in postoptions_report.js to get the PDF from URL: https://jsreport-server-eadvisorapp.azurewebsites.net/api/HttpTrigger1/
+        function downloadreport() {
+            fetch("https://jsreport-server-eadvisorapp.azurewebsites.net/api/HttpTrigger1/", {
+                body: JSON.stringify(postoptions_report),
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8',
+                    "Access-Control-Allow-Origin": "*"
+                },
+            })
+                .then(response => response.blob())
+                .then(response => {
+                    const blob = new Blob([response], { type: 'application/pdf' });
+                    const downloadUrl = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = downloadUrl;
+                    a.download = "file.pdf";
+                    document.body.appendChild(a);
+                    a.click();
+                })
+        }
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>
