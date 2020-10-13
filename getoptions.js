@@ -15,8 +15,8 @@ var getoptionsforoverview = {
     usecustom: 0, // use custom portfolio checkbox (0=false, 1=true)
     pa_adjust_s: 70, // age of client to start adjusting portfolio
     pa_adjust_e: 75, // age of client to end adjusting portfolio
-    pr_port: 0, // pre-retirement portfolio selected (0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
-    r_port: 0, // retirement portfolio selected (0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
+    pr_port: "Very Aggressive", // pre-retirement portfolio selected (0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
+    r_port: "Balanced", // retirement portfolio selected (0=Very Aggressive, 1=Aggressive, 2=Balanced, 3=Conservative, 4=Very conservative)
     pr_stock: 75, // pre-retirement stock/bond/cash allocation for custom portfolio only
     pr_tbond: 10,
     pr_corpbond: 10,
