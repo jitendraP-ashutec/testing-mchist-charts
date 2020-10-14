@@ -58,6 +58,7 @@ var HISTArea = Highcharts.chart('container-histarea', {
         crosshairs: true,
         split: true,
         valuePrefix: '$',
+        valueSuffix: ' ',
         valueDecimals: 0,
         animation: false,
         shadow: false,

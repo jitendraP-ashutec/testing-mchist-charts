@@ -45,6 +45,7 @@ var MCArea = Highcharts.chart('container-mcarea', {
         crosshairs: true,
         split: true,
         valuePrefix: '$',
+        valueSuffix: ' ',
         animation: false,
         shadow: false,
         valueDecimals: 0,
