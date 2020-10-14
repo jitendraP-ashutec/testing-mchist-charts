@@ -8,7 +8,8 @@ var HISTPAlive = Highcharts.chart('container-histperc', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
-        plotShadow: false
+        plotShadow: false,
+        spacingBottom: -100
     },
     tooltip: {
         enabled: false
@@ -70,7 +71,8 @@ var HISTPAliveLegacy = Highcharts.chart('container-histperc-legacy', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
-        plotShadow: false
+        plotShadow: false,
+        spacingBottom: -100
     },
     tooltip: {
         enabled: false

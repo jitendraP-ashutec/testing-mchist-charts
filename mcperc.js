@@ -3,7 +3,8 @@ var MCPAlive = Highcharts.chart('container-mcperc', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
-        plotShadow: false
+        plotShadow: false,
+        spacingBottom: -100
     },
     tooltip: {
         enabled: false
@@ -47,7 +48,8 @@ var MCPAliveLegacy = Highcharts.chart('container-mcperc-legacy', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
-        plotShadow: false
+        plotShadow: false,
+        spacingBottom: -100
     },
     tooltip: {
         enabled: false
