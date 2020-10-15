@@ -89,6 +89,7 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
     },
     tooltip: {
         xDateFormat: '%Y',
+        valueSuffix: ' ',
         split: true,
         animation: false,
         shadow: false,
@@ -102,7 +103,7 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         data: null,
         type: 'column',
         yAxis: 0,
-        tooltip: {valueDecimals: 0,valuePrefix: '$'},
+        tooltip: {valueDecimals: 0,valuePrefix: '$',valueSuffix: ' ',},
         zones: [{
             value: 0,
             color: '#FFA6A6'
@@ -116,7 +117,7 @@ var HISTSpending = Highcharts.chart('histyearlyspendingchart', {
         data: null,
         yAxis: 1,
         type: 'spline',
-        tooltip: {valueDecimals: 1,valueSuffix: '%'},
+        tooltip: {valueDecimals: 1,valueSuffix: '% '},
         animation: false,
         color: '#7900FF'
     }
@@ -210,6 +211,7 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
     },
     tooltip: {
         xDateFormat: '%Y',
+        valueSuffix: ' ',
         split: true,
         animation: false,
         shadow: false,
@@ -223,7 +225,7 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         data: null,
         type: 'column',
         yAxis: 0,
-        tooltip: {valueDecimals: 0,valuePrefix: '$'},
+        tooltip: {valueDecimals: 0,valuePrefix: '$',valueSuffix: ' ',},
         zones: [{
             value: 0,
             color: '#FFA6A6'
@@ -237,7 +239,7 @@ var MCSpending = Highcharts.chart('mcyearlyspendingchart', {
         data: null,
         yAxis: 1,
         type: 'spline',
-        tooltip: {valueDecimals: 1,valueSuffix: '%'},
+        tooltip: {valueDecimals: 1,valueSuffix: '% '},
         animation: false,
         color: '#7900FF'
     }
