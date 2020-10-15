@@ -179,6 +179,8 @@ var postoptions_scenarios = {
     "scenario_taxablevsroth_withdrawals": false,
     "scenario_taxablevsroth_withdrawals_amountoftax": 15,
 
+    "scenario_allstock": false,
+
     "scenario_2008_at_retirestart": false,
     "scenario_2000_at_retirestart": false,
     "scenario_greatdepression_at_retirestart": false,
